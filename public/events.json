@@ -1,0 +1,50 @@
+[
+  {
+    "id": 1,
+    "name": "Weddings",
+    "image_url": "weddings.jpg",
+    "price": "$1000 - $5000",
+    "description": "Elegant wedding planning",
+    "details": "Our wedding planning service offers you a stress-free and memorable experience. From the moment you say 'yes' to the grand finale of your wedding day, we're here to ensure every moment is enchanting. Our team of dedicated experts will work closely with you to bring your dream wedding to life. Whether you envision a romantic garden ceremony, a glamorous ballroom affair, or a destination wedding on a sandy beach, we have the expertise to make it happen. From venue selection to catering, floral arrangements, photography, and entertainment, we take care of every detail. Your special day should reflect your unique love story, and that's exactly what we aim to create – a celebration of love, family, and lifelong memories."
+  },
+  {
+    "id": 2,
+    "name": "Birthday Parties",
+    "image_url": "birthday.jpg",
+    "price": "$200 - $1000",
+    "description": "Fun-filled birthday celebrations",
+    "details": "At our birthday party planning service, we understand that every birthday is a milestone worth celebrating. Our team is dedicated to crafting unforgettable, fun-filled birthday parties that cater to all ages. Whether you're throwing a whimsical children's party, a chic adult soirée, or a surprise bash, we've got you covered. From theme selection and decor to entertainment and delicious cakes, we ensure that every aspect of your celebration is taken care of. Let us turn your birthday vision into reality, so you can relax and enjoy the festivities with your loved ones. With our meticulous planning and creative flair, your birthday will be a day to cherish for years to come."
+  },
+  {
+    "id": 3,
+    "name": "Anniversaries",
+    "image_url": "anniversaries.jpg",
+    "price": "$500 - $1500",
+    "description": "Romantic anniversary planning",
+    "details": "Anniversaries are an opportunity to rekindle the romance and celebrate the journey of love. Our anniversary planning service specializes in creating intimate, romantic, and heartfelt celebrations. Whether you're marking a few years or a golden milestone, we'll help you plan an anniversary that reflects your unique love story. From selecting the perfect venue to curating a menu that delights the senses, our attention to detail ensures a magical experience. We'll work closely with you to incorporate your personal touches and preferences into the celebration. Let us create an anniversary filled with love, laughter, and cherished memories that will last a lifetime."
+  },
+  {
+    "id": 4,
+    "name": "Engagement Parties",
+    "image_url": "engagement.jpg",
+    "price": "$300 - $800",
+    "description": "Cherish your engagement",
+    "details": "Your engagement is a momentous occasion that deserves to be celebrated with joy and style. Our engagement party planning service is dedicated to crafting memorable gatherings that capture the essence of your love story. From intimate gatherings to extravagant soirées, we tailor each engagement party to your preferences. Our expert team will assist with venue selection, thematic décor, entertainment, and culinary delights. Whether you envision a romantic garden affair, a chic cocktail party, or something entirely unique, we're here to make it happen. Celebrate this special milestone with your closest friends and family, and let us create an engagement party that sets the stage for your beautiful journey ahead."
+  },
+  {
+    "id": 5,
+    "name": "Retirement Parties",
+    "image_url": "retirement.jpg",
+    "price": "$400 - $1200",
+    "description": "Farewell to a great career",
+    "details": "Retirement is a significant life transition that should be celebrated with warmth and appreciation. Our retirement party planning service is dedicated to crafting farewell gatherings that honor your achievements and future adventures. Whether you're retiring from a long career or embarking on a new chapter, we'll create a retirement party that reflects your personality and aspirations. From venue selection to thematic décor, speeches, and entertainment, we'll ensure that your retirement party is a heartfelt send-off filled with fond memories and well-wishes. Let us help you mark this milestone in style and celebrate the exciting journey that lies ahead."
+  },
+  {
+    "id": 6,
+    "name": "Baby Showers",
+    "image_url": "babyshowers.jpg",
+    "price": "$250 - $800",
+    "description": "Welcoming a new life",
+    "details": "Welcoming a new life into the world is a momentous occasion that deserves a joyous celebration. Our baby shower planning service is dedicated to crafting delightful gatherings that honor the parents-to-be and the little one on the way. Whether you prefer a traditional baby shower or a trendy gender reveal party, we've got the expertise to make it special. We'll help you with venue selection, thematic décor, games, and delectable treats that cater to your preferences. Our goal is to create a warm and joyful atmosphere where family and friends can share in the excitement of this new chapter. Let us help you create cherished memories as you prepare to welcome your bundle of joy."
+  }
+]
