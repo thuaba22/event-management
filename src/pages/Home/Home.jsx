@@ -11,7 +11,7 @@ const Home = () => {
     <div>
       <Navbar></Navbar>
       <Banner></Banner>
-      <Cards></Cards>
+      <Cards cards={cards}></Cards>
     </div>
   );
 };

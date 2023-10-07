@@ -1,0 +1,22 @@
+[
+  {
+    "name": "John Smith",
+    "image_url": "john_smith.jpg",
+    "profession": "Event Planner"
+  },
+  {
+    "name": "Jane Doe",
+    "image_url": "jane_doe.jpg",
+    "profession": "Decor Specialist"
+  },
+  {
+    "name": "David Johnson",
+    "image_url": "david_johnson.jpg",
+    "profession": "Catering Manager"
+  },
+  {
+    "name": "Sarah Wilson",
+    "image_url": "sarah_wilson.jpg",
+    "profession": "Entertainment Coordinator"
+  }
+]

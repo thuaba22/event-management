@@ -34,7 +34,7 @@ const Navbar = () => {
                     isPending
                       ? "text-[18px] font-normal text-[#333333]"
                       : isActive
-                      ? "text-[#4682B4] text-[18px] font-bold underline"
+                      ? "text-[#333333] text-[18px] font-bold underline"
                       : ""
                   }
                 >
@@ -48,7 +48,7 @@ const Navbar = () => {
                     isPending
                       ? "text-[18px] font-normal text-[#333333]"
                       : isActive
-                      ? "text-[#4682B4] text-[18px] font-bold underline"
+                      ? "text-[#333333] text-[18px] font-bold underline"
                       : ""
                   }
                 >
@@ -62,7 +62,7 @@ const Navbar = () => {
                     isPending
                       ? "text-[18px] font-normal text-[#333333]"
                       : isActive
-                      ? "text-[#4682B4] text-[18px] font-bold underline"
+                      ? "text-[#333333] text-[18px] font-bold underline"
                       : ""
                   }
                 >
@@ -82,7 +82,7 @@ const Navbar = () => {
                   isPending
                     ? "text-[18px] font-normal text-[#333333]"
                     : isActive
-                    ? "text-[#4682B4] text-[18px] font-bold underline"
+                    ? "text-[#333333] text-[18px] font-bold underline"
                     : ""
                 }
               >
@@ -96,7 +96,7 @@ const Navbar = () => {
                   isPending
                     ? "text-[18px] font-normal text-[#333333]"
                     : isActive
-                    ? "text-[#4682B4] text-[18px] font-bold underline"
+                    ? "text-[#333333] text-[18px] font-bold underline"
                     : ""
                 }
               >
@@ -110,7 +110,7 @@ const Navbar = () => {
                   isPending
                     ? "text-[18px] font-normal text-[#333333]"
                     : isActive
-                    ? "text-[#4682B4] text-[18px] font-bold underline"
+                    ? "text-[#333333] text-[18px] font-bold underline"
                     : ""
                 }
               >
@@ -128,7 +128,7 @@ const Navbar = () => {
                   isPending
                     ? "text-[18px] font-normal text-[#333333]"
                     : isActive
-                    ? "text-[#4682B4] text-[18px] font-bold underline"
+                    ? "text-[#333333] text-[18px] font-bold underline"
                     : ""
                 }
               >
@@ -142,7 +142,7 @@ const Navbar = () => {
                   isPending
                     ? "text-[18px] font-normal text-[#333333]"
                     : isActive
-                    ? "text-[#4682B4] text-[18px] font-bold underline"
+                    ? "text-[#333333] text-[18px] font-bold underline"
                     : ""
                 }
               >
