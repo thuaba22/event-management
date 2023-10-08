@@ -5,7 +5,7 @@ const Cards = ({ cards }) => {
   return (
     <div className="container  max-w-6xl mx-auto">
       <div className="mb-20">
-        <h2 className="text-center text-2xl font-semibold bg-black text-white py-4">
+        <h2 className="text-center rounded-xl text-2xl font-semibold bg-black text-white py-4">
           Our Signature Celebrations
         </h2>
       </div>
