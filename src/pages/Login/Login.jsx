@@ -103,11 +103,11 @@ const Login = () => {
                   </label>
                 </div>
                 <div className="form-control mt-6">
-                  <button className="btn bg-black hover:bg-black text-white mb-5">
+                  <button className="btn bg-black hover:bg-black text-white mb-1">
                     Login
                   </button>
                   {loginError && <p className="text-red-700">{loginError}</p>}
-                  <p className="mt-4 block text-center text-base font-normal leading-relaxed text-gray-700 antialiased">
+                  <p className="block mb-5 text-center text-base font-normal leading-relaxed text-gray-700 antialiased">
                     Don&#39;t have an account? Please{" "}
                     <Link
                       className="font-medium text-black transition-colors hover:text-pink-500"
