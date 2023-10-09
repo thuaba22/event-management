@@ -1,22 +1,34 @@
 import { Link } from "react-router-dom";
 import Navbar from "../../components/Header/Navbar/Navbar";
-import { useContext } from "react";
+import { useContext, useRef } from "react";
 import { AuthContext } from "../../providers/AuthProvider";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { getAuth, signOut } from "firebase/auth";
 
 const Register = () => {
   const { createUser } = useContext(AuthContext);
+  const formRef = useRef(null);
   const handleRegister = (e) => {
     e.preventDefault();
-    const form = new FormData(e.currentTarget);
+    const form = new FormData(formRef.current);
     const name = form.get("name");
     const email = form.get("email");
     const password = form.get("password");
+    const auth = getAuth(); // Add this line to get the auth object
     // create user
-    createUser(email, password)
+    createUser(email, password, auth)
       .then((result) => {
         console.log(result.user);
+        toast("Registration successful!"); // Show a success toast message
+        formRef.current.reset();
+        return signOut(auth)
+          .then(() => {
+            console.log("User signed out after registration.");
+          })
+          .catch((error) => {
+            console.log("Error signing out:", error);
+          });
       })
       .catch((error) => {
         console.log(error);
@@ -36,7 +48,7 @@ const Register = () => {
             </p>
           </div>
           <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
-            <form onSubmit={handleRegister} className="card-body">
+            <form ref={formRef} onSubmit={handleRegister} className="card-body">
               <div className="form-control">
                 <label className="label">
                   <span className="label-text">Name</span>

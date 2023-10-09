@@ -1,11 +1,16 @@
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import Navbar from "../../components/Header/Navbar/Navbar";
 import { useContext } from "react";
 import { AuthContext } from "../../providers/AuthProvider";
 import { FaGoogle } from "react-icons/fa";
+import { ToastContainer, toast } from "react-toastify";
+
+import "react-toastify/dist/ReactToastify.css";
 
 const Login = () => {
   const { signIn, googleSignIn } = useContext(AuthContext);
+  const location = useLocation();
+  const navigate = useNavigate();
   const handleLogin = (e) => {
     e.preventDefault();
     console.log(e.currentTarget);
@@ -16,6 +21,12 @@ const Login = () => {
     signIn(email, password)
       .then((result) => {
         console.log(result.user);
+        toast("Registration successful!"); // Show a success toast message
+
+        const redirectTo = location.state ? location.state.from : "/";
+        setTimeout(() => {
+          window.location.href = redirectTo; // Redirect after a delay
+        }, 1500);
       })
       .catch((error) => {
         console.log(error);
@@ -24,12 +35,19 @@ const Login = () => {
   const handleGoogle = () => {
     googleSignIn().then((result) => {
       console.log(result.user);
+      toast("Registration successful!"); // Show a success toast message
+
+      const redirectTo = navigate(location?.state ? location.state : "/");
+      setTimeout(() => {
+        window.location.href = redirectTo;
+      }, 2000);
     });
   };
   return (
     <div>
       <Navbar></Navbar>
       <div className="hero min-h-screen bg-base-200">
+        <ToastContainer />
         <div className="hero-content flex-col">
           <div className="text-center mb-10">
             <h1 className="text-5xl font-bold">Login Your Account</h1>
