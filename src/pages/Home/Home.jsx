@@ -46,11 +46,11 @@ const Home = () => {
       <Navbar></Navbar>
       <Banner></Banner>
       <Cards cards={cards}></Cards>
-      <div data-aos="fade-zoom-in">
+      <div data-aos="zoom-in">
         <Teams teamData={teamData}></Teams>
       </div>
 
-      <div data-aos="fade-zoom-in">
+      <div data-aos="zoom-in">
         <Faq></Faq>
       </div>
       <Footer></Footer>

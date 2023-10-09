@@ -34,7 +34,7 @@ const Login = () => {
       })
       .catch((error) => {
         console.log(error);
-        setLoginError("Invalid email or password");
+        setLoginError(error.message);
       });
   };
   const handleGoogle = () => {
@@ -58,70 +58,76 @@ const Login = () => {
             <h1 className="md:text-5xl font-bold">Login Your Account</h1>
           </div>
           <div className="card  md:w-[500px] shadow-2xl bg-base-100">
-            <form onSubmit={handleLogin} className="card-body">
-              <div className="form-control">
-                <label className="label">
-                  <span className="label-text">Email</span>
-                </label>
-                <input
-                  type="email"
-                  name="email"
-                  placeholder="email"
-                  className="input input-bordered"
-                  required
-                />
-              </div>
-              <div className="form-control">
-                <label className="label">
-                  <span className="label-text">Password</span>
-                </label>
-                <div className="relative">
+            <div className="card-body">
+              <form onSubmit={handleLogin}>
+                <div className="form-control">
+                  <label className="label">
+                    <span className="label-text">Email</span>
+                  </label>
                   <input
-                    type={showPassword ? "text" : "password"}
-                    name="password"
-                    placeholder="password"
-                    className="input input-bordered w-full"
+                    type="email"
+                    name="email"
+                    placeholder="email"
+                    className="input input-bordered"
                     required
                   />
-                  <span
-                    className="absolute top-4 right-2"
-                    onClick={() => setShowPassword(!showPassword)}
-                  >
-                    {showPassword ? <FaEyeSlash></FaEyeSlash> : <FaEye></FaEye>}
-                  </span>
                 </div>
+                <div className="form-control">
+                  <label className="label">
+                    <span className="label-text">Password</span>
+                  </label>
+                  <div className="relative">
+                    <input
+                      type={showPassword ? "text" : "password"}
+                      name="password"
+                      placeholder="password"
+                      className="input input-bordered w-full"
+                      required
+                    />
+                    <span
+                      className="absolute top-4 right-2"
+                      onClick={() => setShowPassword(!showPassword)}
+                    >
+                      {showPassword ? (
+                        <FaEyeSlash></FaEyeSlash>
+                      ) : (
+                        <FaEye></FaEye>
+                      )}
+                    </span>
+                  </div>
 
-                <label className="label">
-                  <a href="#" className="label-text-alt link link-hover">
-                    Forgot password?
-                  </a>
-                </label>
-              </div>
-              <div className="form-control mt-6">
-                <button className="btn bg-black hover:bg-black text-white mb-5">
-                  Login
-                </button>
-                {loginError && <p className="text-red-700">{loginError}</p>}
-                <hr className="border-black border-1 w-1/4 mx-auto" />
-                <div className="mt-5">
-                  <button className="btn bg-black hover:bg-black text-white w-full">
-                    <FaGoogle
-                      onClick={handleGoogle}
-                      className="text-3xl"
-                    ></FaGoogle>
-                  </button>
+                  <label className="label">
+                    <a href="#" className="label-text-alt link link-hover">
+                      Forgot password?
+                    </a>
+                  </label>
                 </div>
-                <p className="mt-4 block text-center text-base font-normal leading-relaxed text-gray-700 antialiased">
-                  Don&#39;t have an account? Please{" "}
-                  <Link
-                    className="font-medium text-black transition-colors hover:text-pink-500"
-                    to="/register"
-                  >
-                    Register
-                  </Link>
-                </p>
+                <div className="form-control mt-6">
+                  <button className="btn bg-black hover:bg-black text-white mb-5">
+                    Login
+                  </button>
+                  {loginError && <p className="text-red-700">{loginError}</p>}
+                  <p className="mt-4 block text-center text-base font-normal leading-relaxed text-gray-700 antialiased">
+                    Don&#39;t have an account? Please{" "}
+                    <Link
+                      className="font-medium text-black transition-colors hover:text-pink-500"
+                      to="/register"
+                    >
+                      Register
+                    </Link>
+                  </p>
+                  <hr className="border-black border-1 w-1/4 mx-auto" />
+                </div>
+              </form>
+              <div className="mt-5">
+                <button className="btn bg-black hover:bg-black text-white w-full">
+                  <FaGoogle
+                    onClick={handleGoogle}
+                    className="text-3xl"
+                  ></FaGoogle>
+                </button>
               </div>
-            </form>
+            </div>
           </div>
         </div>
       </div>
