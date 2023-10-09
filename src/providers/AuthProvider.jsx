@@ -7,6 +7,7 @@ import {
   signInWithEmailAndPassword,
   signInWithPopup,
   signOut,
+  updateProfile,
 } from "firebase/auth";
 import app from "../firebase/firebase.comfig";
 
@@ -18,11 +19,20 @@ const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null);
   const [loading, setLoading] = useState(true);
 
-  const createUser = async (email, password) => {
+  const createUser = async (email, password, name, photoURL) => {
     setLoading(true);
 
     try {
-      await createUserWithEmailAndPassword(auth, email, password);
+      const result = await createUserWithEmailAndPassword(
+        auth,
+        email,
+        password
+      );
+      setLoading(false);
+      await updateProfile(result.user, {
+        displayName: name,
+        photoURL: photoURL,
+      });
       setLoading(false);
       return true; // Registration successful
     } catch (error) {

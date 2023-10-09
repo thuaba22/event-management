@@ -1,45 +1,50 @@
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import Navbar from "../../components/Header/Navbar/Navbar";
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { AuthContext } from "../../providers/AuthProvider";
 import { FaGoogle } from "react-icons/fa";
 import { ToastContainer, toast } from "react-toastify";
-
 import "react-toastify/dist/ReactToastify.css";
+import { FaEye, FaEyeSlash } from "react-icons/fa";
 
 const Login = () => {
   const { signIn, googleSignIn } = useContext(AuthContext);
   const location = useLocation();
   const navigate = useNavigate();
+  const [loginError, setLoginError] = useState("");
+  const [showPassword, setShowPassword] = useState(false);
+
   const handleLogin = (e) => {
     e.preventDefault();
     console.log(e.currentTarget);
     const form = new FormData(e.currentTarget);
     const email = form.get("email");
     const password = form.get("password");
-    console.log(email, password);
+    setLoginError("");
     signIn(email, password)
       .then((result) => {
         console.log(result.user);
-        toast("Registration successful!"); // Show a success toast message
+
+        toast("Login successful!"); // Show a success toast message
 
         const redirectTo = location.state ? location.state.from : "/";
         setTimeout(() => {
-          window.location.href = redirectTo; // Redirect after a delay
+          navigate(redirectTo);
         }, 1500);
       })
       .catch((error) => {
         console.log(error);
+        setLoginError("Invalid email or password");
       });
   };
   const handleGoogle = () => {
     googleSignIn().then((result) => {
       console.log(result.user);
-      toast("Registration successful!"); // Show a success toast message
+      toast("Login successful!"); // Show a success toast message
 
       const redirectTo = navigate(location?.state ? location.state : "/");
       setTimeout(() => {
-        window.location.href = redirectTo;
+        navigate(redirectTo);
       }, 2000);
     });
   };
@@ -70,13 +75,22 @@ const Login = () => {
                 <label className="label">
                   <span className="label-text">Password</span>
                 </label>
-                <input
-                  type="password"
-                  name="password"
-                  placeholder="password"
-                  className="input input-bordered"
-                  required
-                />
+                <div className="relative">
+                  <input
+                    type={showPassword ? "text" : "password"}
+                    name="password"
+                    placeholder="password"
+                    className="input input-bordered w-full"
+                    required
+                  />
+                  <span
+                    className="absolute top-4 right-2"
+                    onClick={() => setShowPassword(!showPassword)}
+                  >
+                    {showPassword ? <FaEyeSlash></FaEyeSlash> : <FaEye></FaEye>}
+                  </span>
+                </div>
+
                 <label className="label">
                   <a href="#" className="label-text-alt link link-hover">
                     Forgot password?
@@ -84,17 +98,18 @@ const Login = () => {
                 </label>
               </div>
               <div className="form-control mt-6">
-                <button className="btn bg-black hover:bg-black text-white">
+                <button className="btn bg-black hover:bg-black text-white mb-5">
                   Login
                 </button>
+                {loginError && <p className="text-red-700">{loginError}</p>}
+                <hr className="border-black border-1 w-1/4 mx-auto" />
                 <div className="mt-5">
-                  <p className="flex justify-center items-center">
-                    Login with:
+                  <button className="btn bg-black hover:bg-black text-white w-full">
                     <FaGoogle
                       onClick={handleGoogle}
-                      className="text-3xl inline ml-2"
+                      className="text-3xl"
                     ></FaGoogle>
-                  </p>
+                  </button>
                 </div>
                 <p className="mt-4 block text-center text-base font-normal leading-relaxed text-gray-700 antialiased">
                   Don&#39;t have an account? Please{" "}

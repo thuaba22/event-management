@@ -1,13 +1,16 @@
 import { Link } from "react-router-dom";
 import Navbar from "../../components/Header/Navbar/Navbar";
-import { useContext, useRef } from "react";
+import { useContext, useRef, useState } from "react";
 import { AuthContext } from "../../providers/AuthProvider";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { getAuth, signOut } from "firebase/auth";
+import { FaEye, FaEyeSlash } from "react-icons/fa";
 
 const Register = () => {
   const { createUser } = useContext(AuthContext);
+  const [registerError, setRegisterError] = useState("");
+  const [showPassword, setShowPassword] = useState(false);
   const formRef = useRef(null);
   const handleRegister = (e) => {
     e.preventDefault();
@@ -15,9 +18,19 @@ const Register = () => {
     const name = form.get("name");
     const email = form.get("email");
     const password = form.get("password");
-    const auth = getAuth(); // Add this line to get the auth object
+    const photoURL = form.get("photoURL");
+
+    setRegisterError("");
+
+    if (!/(?=.*[A-Z])(?=.*[^A-Z0-9\s]).{6,}/.test(password)) {
+      setRegisterError(
+        "It should contain at least 6 character, 1 uppercase & 1 special character"
+      );
+      return;
+    }
+    const auth = getAuth();
     // create user
-    createUser(email, password, auth)
+    createUser(email, password, name, photoURL)
       .then((result) => {
         console.log(result.user);
         toast("Registration successful!"); // Show a success toast message
@@ -32,6 +45,7 @@ const Register = () => {
       })
       .catch((error) => {
         console.log(error);
+        setRegisterError(error.message);
       });
   };
   return (
@@ -63,6 +77,18 @@ const Register = () => {
               </div>
               <div className="form-control">
                 <label className="label">
+                  <span className="label-text">Photo_URL</span>
+                </label>
+                <input
+                  type="text"
+                  placeholder="photo_url"
+                  name="photoURL"
+                  className="input input-bordered"
+                  required
+                />
+              </div>
+              <div className="form-control">
+                <label className="label">
                   <span className="label-text">Email</span>
                 </label>
                 <input
@@ -77,13 +103,21 @@ const Register = () => {
                 <label className="label">
                   <span className="label-text">Password</span>
                 </label>
-                <input
-                  type="password"
-                  name="password"
-                  placeholder="password"
-                  className="input input-bordered"
-                  required
-                />
+                <div className="relative">
+                  <input
+                    type={showPassword ? "text" : "password"}
+                    name="password"
+                    placeholder="password"
+                    className="input input-bordered w-full"
+                    required
+                  />
+                  <span
+                    className="absolute top-4 right-2"
+                    onClick={() => setShowPassword(!showPassword)}
+                  >
+                    {showPassword ? <FaEyeSlash></FaEyeSlash> : <FaEye></FaEye>}
+                  </span>
+                </div>
                 <div className="inline-flex items-center mt-3">
                   <label
                     className="relative -ml-2.5 flex cursor-pointer items-center rounded-full p-3"
@@ -127,6 +161,9 @@ const Register = () => {
                     </p>
                   </label>
                 </div>
+                {registerError && (
+                  <p className="text-red-700">{registerError}</p>
+                )}
               </div>
               <div className="form-control mt-6">
                 <button className="btn bg-black hover:bg-black text-white">

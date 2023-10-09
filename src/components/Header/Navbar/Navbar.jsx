@@ -64,6 +64,20 @@ const Navbar = () => {
               </li>
               <li>
                 <NavLink
+                  to="/register"
+                  className={({ isActive, isPending }) =>
+                    isPending
+                      ? "text-[18px] font-normal text-[#333333]"
+                      : isActive
+                      ? "text-[#333333] text-[18px] font-bold underline"
+                      : ""
+                  }
+                >
+                  Register
+                </NavLink>
+              </li>
+              <li>
+                <NavLink
                   to="/contact"
                   className={({ isActive, isPending }) =>
                     isPending
@@ -158,9 +172,12 @@ const Navbar = () => {
           <ul className="flex items-center gap-4">
             {user ? (
               <div className="flex items-center">
-                <img src={user.photoURL} alt="" />
-
-                <h3 className="ml-2">{user.displayName}</h3>
+                {user.photoURL ? (
+                  <img className="w-[20%]" src={user.photoURL} alt="" />
+                ) : (
+                  <FaUser></FaUser>
+                )}
+                <h3 className="ml-2">{user.displayName || "User"}</h3>
               </div>
             ) : (
               <FaUser></FaUser>
