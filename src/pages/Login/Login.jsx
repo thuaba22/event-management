@@ -51,13 +51,13 @@ const Login = () => {
   return (
     <div>
       <Navbar></Navbar>
-      <div className="hero min-h-screen bg-base-200">
+      <div className="hero container w-full md:min-h-screen bg-base-200">
         <ToastContainer />
         <div className="hero-content flex-col">
-          <div className="text-center mb-10">
-            <h1 className="text-5xl font-bold">Login Your Account</h1>
+          <div className="text-center md:mb-10">
+            <h1 className="md:text-5xl font-bold">Login Your Account</h1>
           </div>
-          <div className="card  w-[500px] shadow-2xl bg-base-100">
+          <div className="card  md:w-[500px] shadow-2xl bg-base-100">
             <form onSubmit={handleLogin} className="card-body">
               <div className="form-control">
                 <label className="label">

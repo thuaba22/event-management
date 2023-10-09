@@ -5,8 +5,8 @@ const Contact = () => {
   return (
     <div>
       <Navbar></Navbar>
-      <div className="container  max-w-6xl mx-auto my-12">
-        <div className="grid grid-cols-2 gap-4">
+      <div className="container w-[90%] md:max-w-6xl mx-auto my-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           <div>
             <h1 className="text-4xl font-bold mb-4">Contact Us</h1>
             <p className="text-lg mb-6">

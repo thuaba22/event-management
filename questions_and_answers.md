@@ -18,9 +18,9 @@ console.log(greetign);
 <details><summary><b>Answer</b></summary>
 <p>
 
-#### Answer: ?
+#### Answer: B?
 
-<i>Write your explanation here</i>
+<i>This code will result in a ReferenceError because there is a typo in the variable name. It should be "greeting" instead of "greetign." Therefore, "greetign" is not defined, and attempting to log it will throw an error.</i>
 
 </p>
 </details>
@@ -43,9 +43,9 @@ sum(1, "2");
 <details><summary><b>Answer</b></summary>
 <p>
 
-#### Answer: ?
+#### Answer: A?
 
-<i>Write your explanation here</i>
+<i>JavaScript performs implicit type coercion in this case, attempting to add a number (1) to a string ("2"). This results in a Not-a-Number (NaN) value because it cannot perform arithmetic on different data types without explicit conversion.</i>
 
 </p>
 </details>
@@ -69,9 +69,9 @@ console.log(food);
 <details><summary><b>Answer</b></summary>
 <p>
 
-#### Answer: ?
+#### Answer: A?
 
-<i>Write your explanation here</i>
+<i>The code only modifies the "favoriteFood" property of the "info" object to "🍝." It does not directly modify the "food" array. Therefore, the "food" array remains unchanged, and the output is as shown in option A.</i>
 
 </p>
 </details>
@@ -94,9 +94,9 @@ console.log(sayHi());
 <details><summary><b>Answer</b></summary>
 <p>
 
-#### Answer: ?
+#### Answer: B?
 
-<i>Write your explanation here</i>
+<i>The "sayHi" function expects a "name" parameter, but it's called without any arguments in the "console.log" statement. In JavaScript, when a function parameter is not provided a value, it defaults to "undefined." So, the output will be "Hi there, undefined."</i>
 
 </p>
 </details>
@@ -122,9 +122,9 @@ console.log(count);
 <details><summary><b>Answer</b></summary>
 <p>
 
-#### Answer: ?
+#### Answer: C?
 
-<i>Write your explanation here</i>
+<i>The "forEach" loop iterates through the elements in the "nums" array, and the condition 'if (num)' checks if each element is truthy (non-zero in this case). For each truthy element, the "count" variable is incremented by 1. There are three truthy elements in the array (1, 2, and 3), so the "count" becomes 3, and that's what will be logged.</i>
 
 </p>
 </details>

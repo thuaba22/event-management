@@ -5,6 +5,9 @@ import Navbar from "../../components/Header/Navbar/Navbar";
 import Teams from "../../components/Teams/Teams";
 import Faq from "../../components/Faq/Faq";
 import Footer from "../../components/Footer/Footer";
+import AOS from "aos";
+import "aos/dist/aos.css";
+import { useEffect } from "react";
 
 const Home = () => {
   const cards = useLoaderData();
@@ -34,14 +37,22 @@ const Home = () => {
       profession: "Entertainment Coordinator",
     },
   ];
+  useEffect(() => {
+    AOS.init({ duration: "1000" });
+  }, []);
 
   return (
     <div>
       <Navbar></Navbar>
       <Banner></Banner>
       <Cards cards={cards}></Cards>
-      <Teams teamData={teamData}></Teams>
-      <Faq></Faq>
+      <div data-aos="fade-zoom-in">
+        <Teams teamData={teamData}></Teams>
+      </div>
+
+      <div data-aos="fade-zoom-in">
+        <Faq></Faq>
+      </div>
       <Footer></Footer>
     </div>
   );
