@@ -6,6 +6,7 @@ import Contact from "../pages/Contact/Contact";
 import ErrorPage from "../pages/ErrorPage/ErrorPage";
 import Register from "../pages/Register/Register";
 import Login from "../pages/Login/Login";
+import EventDetails from "../pages/EventDetails/EventDetails";
 
 const router = createBrowserRouter([
   {
@@ -17,6 +18,10 @@ const router = createBrowserRouter([
         path: "/",
         element: <Home></Home>,
         loader: () => fetch("/events.json"),
+      },
+      {
+        path: "/events/:id",
+        element: <EventDetails></EventDetails>,
       },
       {
         path: "/about",

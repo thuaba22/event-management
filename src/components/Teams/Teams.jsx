@@ -3,7 +3,7 @@ import TeamMember from "../TeamMember/TeamMember";
 
 const Teams = ({ teamData }) => {
   return (
-    <div className="container  max-w-6xl mx-auto bg-black mt-20 mb-20 h-[400px] rounded-xl">
+    <div className="container  max-w-6xl mx-auto bg-black mt-20 mb-20 md:h-[400px] rounded-xl">
       <div className="pt-10">
         <h1 className="text-white text-4xl font-bold text-center mb-8">
           Meet the Team

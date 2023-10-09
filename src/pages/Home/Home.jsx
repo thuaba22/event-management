@@ -4,6 +4,7 @@ import Banner from "../../components/Header/Banner/Banner";
 import Navbar from "../../components/Header/Navbar/Navbar";
 import Teams from "../../components/Teams/Teams";
 import Faq from "../../components/Faq/Faq";
+import Footer from "../../components/Footer/Footer";
 
 const Home = () => {
   const cards = useLoaderData();
@@ -41,6 +42,7 @@ const Home = () => {
       <Cards cards={cards}></Cards>
       <Teams teamData={teamData}></Teams>
       <Faq></Faq>
+      <Footer></Footer>
     </div>
   );
 };

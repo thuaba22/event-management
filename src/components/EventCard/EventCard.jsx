@@ -1,8 +1,9 @@
 import PropTypes from "prop-types";
+import { Link } from "react-router-dom";
 const EventCard = ({ card }) => {
-  const { name, image_url, price, description } = card || {};
+  const { id, name, image_url, price, description } = card || {};
   return (
-    <div className="">
+    <div className="w-[80%] mx-auto md:w-full">
       <div className="card card-compact bg-base-100 shadow-xl">
         <figure>
           <img
@@ -16,9 +17,11 @@ const EventCard = ({ card }) => {
           <p>{description}</p>
           <p>{price}</p>
           <div className="card-actions justify-end">
-            <button className="btn bg-black hover:bg-black font-bold text-white capitalize">
-              Show Details
-            </button>
+            <Link to={`/events/${id}`}>
+              <button className="btn bg-black hover:bg-black font-bold text-white capitalize">
+                Show Details
+              </button>
+            </Link>
           </div>
         </div>
       </div>
