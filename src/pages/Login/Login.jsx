@@ -120,11 +120,11 @@ const Login = () => {
                 </div>
               </form>
               <div className="mt-5">
-                <button className="btn bg-black hover:bg-black text-white w-full">
-                  <FaGoogle
-                    onClick={handleGoogle}
-                    className="text-3xl"
-                  ></FaGoogle>
+                <button
+                  onClick={handleGoogle}
+                  className="btn bg-black hover:bg-black text-white w-full"
+                >
+                  <FaGoogle className="text-3xl"></FaGoogle>
                 </button>
               </div>
             </div>
